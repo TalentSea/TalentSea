@@ -1,1 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A source of Fresh, Talented and Industry-Ready Computer Science graduates.">
+  <title>TalentSea Resources - Why TSR?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* SMOOTH SCROLLING ENABLED */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      color: #000;
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+    .page-wrapper {
+      background: #fff;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: #fff;
+      padding: 60px 0 0; /* Reduced top padding */
+    }
+    .header-wrapper {
+      padding-bottom: 30px; /* Reduced from 40px */
+      margin-bottom: 30px; /* Reduced from 40px */
+      text-align: center;
+      position: relative;
+    }
+    .header-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: #000;
+    }
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Button Container */
+    .hero-btn-container {
+        text-align: center;
+        margin-bottom: 50px; /* Reduced from 60px */
+    }
+
+    .hero-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border: 2px solid #000;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+    }
+    .hero-btn:hover {
+        background: #000;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .tagline {
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 30px; /* Reduced from 50px */
+      letter-spacing: -0.01em;
+    }
+    .tagline-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .tagline-underline::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: #f0f0f0;
+      z-index: -1;
+    }
+    .hero-content {
+      padding: 0 0 60px; /* Reduced bottom padding from 100px to 60px */
+    }
+    .hero-description {
+      max-width: 900px;
+      border-left: 3px solid #000;
+      padding-left: 30px;
+      margin-bottom: 30px; /* Reduced from 40px */
+    }
+    .hero-description p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    .mission {
+      max-width: 900px;
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    /* --- Features Section --- */
+    .features {
+      background: #fafafa;
+      padding: 60px 0; /* Reduced from 100px */
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 2px solid #000;
+      padding: 40px 30px; /* Slightly reduced internal padding */
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #000;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 8px 8px 0 #000;
+    }
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* --- COMPACT FLOWCHART SECTION --- */
+    .process-section {
+        background: #fff;
+        padding: 50px 0; /* Adjusted for balance */
+        scroll-margin-top: 20px;
+    }
+    .process-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .process-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .flow-wrapper {
+        max-width: 650px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .step-box, .outcome-box {
+        background: #fff;
+        border: 2px solid #000;
+        padding: 15px 25px;
+        width: 100%;
+        box-shadow: 5px 5px 0px #000;
+        position: relative;
+        text-align: left;
+        transition: transform 0.3s ease;
+    }
+    .step-box:hover, .outcome-box:hover {
+        transform: translateY(-2px);
+    }
+    .step-header {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 8px;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 5px;
+        display: block;
+    }
+    .step-details {
+        list-style: none;
+        padding: 0;
+        font-size: 0.95rem;
+    }
+    .step-details li {
+        margin-bottom: 4px;
+        padding-left: 15px;
+        position: relative;
+    }
+    .step-details li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    .flow-arrow {
+        font-size: 1.5rem;
+        color: #000;
+        margin: 5px 0;
+        line-height: 1;
+        opacity: 0.3;
+    }
+    .outcome-label {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .outcome-container {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+    }
+    .outcome-box {
+        flex: 1;
+        border: 2px solid #000; 
+        box-shadow: 5px 5px 0 #000;
+    }
+    .constraint {
+        font-weight: 800;
+        color: #d32f2f;
+        font-size: 0.9em;
+    }
+    .passion-circle {
+        border: 2px solid #d32f2f;
+        border-radius: 50%;
+        padding: 0px 6px;
+        color: #d32f2f;
+        font-weight: 600;
+        font-style: italic;
+        display: inline-block;
+        transform: rotate(-3deg);
+    }
+
+    /* --- TESTIMONIALS SECTION --- */
+    .testimonials {
+        background: #fafafa;
+        padding: 60px 0; /* Reduced from 80px */
+    }
+    .testimonials-header {
+        text-align: center;
+        margin-bottom: 40px; /* Reduced from 50px */
+    }
+    .testimonials-header h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .testimonial-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-left: 4px solid #000;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    .quote-icon {
+        font-size: 2rem;
+        color: #ccc;
+        line-height: 1;
+        margin-bottom: 10px; /* Reduced from 15px */
+    }
+    .testimonial-text {
+        font-size: 0.95rem;
+        font-style: italic;
+        color: #444;
+        margin-bottom: 20px; /* Reduced from 25px */
+        line-height: 1.6;
+    }
+    .author-info h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 2px;
+        color: #000;
+    }
+    .author-info span {
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* --- CTA Section --- */
+    .cta {
+      background: #f5f5f5;
+      color: #000;
+      padding: 70px 0; /* Reduced from 100px */
+      position: relative;
+      margin-bottom: 0;
+      transition: all 0.3s ease;
+    }
+    .cta:hover {
+      background: #ebebeb;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      z-index: 0;
+      transition: opacity 0.3s ease;
+    }
+    .cta:hover::before {
+      opacity: 0.8;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    .cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px; /* Reduced from 30px */
+      line-height: 1.3;
+      color: #000;
+    }
+    .cta p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 30px; /* Reduced from 40px */
+      color: #000;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #000;
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 15px 35px;
+      border: 2px solid #000;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+    .cta-button:hover {
+      color: #fff;
+    }
+    .cta-button:hover::before {
+      left: 0;
+    }
+    .arrow {
+      font-size: 1.5rem;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 60px 0 30px; /* Reduced from 80px 0 40px */
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px; /* Reduced from 50px */
+      margin-bottom: 30px; /* Reduced from 40px */
+    }
+    .footer-section h3 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px; /* Reduced from 20px */
+      color: #fff;
+    }
+    .footer-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #fff;
+    }
+    .location-icon,
+    .email-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .location-icon svg,
+    .email-icon svg {
+      stroke: #fff;
+    }
+    .footer-section a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #fff;
+    }
+    .footer-section a:hover {
+      opacity: 0.6;
+    }
+    .copyright {
+      font-size: 0.875rem;
+      color: #999;
+      padding-top: 20px; /* Reduced from 30px */
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 1024px) {
+        .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 0; }
+      .page-wrapper { min-height: 100vh; }
+      .container { padding: 0 20px; }
+      h1 { font-size: 2.5rem; }
+      .tagline { font-size: 1.75rem; }
+      .cta h2 { font-size: 1.75rem; }
+      .hero, .features, .cta, .process-section, .testimonials { padding: 40px 0; }
+      .features-grid { grid-template-columns: 1fr; gap: 20px; }
+      .outcome-container { flex-direction: column; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+    
+    <section class="hero">
+      <div class="container">
+        
+        <div class="header-wrapper">
+          <h1>TalentSea Resources</h1>
+        </div>
+
+        <div class="hero-btn-container">
+            <a href="#why-tsr" class="hero-btn">Why TalentSea?</a>
+        </div>
+
+        <div class="hero-content">
+          <h2 class="tagline">
+            Bridging the Gap Between<br>
+            <span class="tagline-underline">Talent</span> and <span class="tagline-underline">Opportunity</span>
+          </h2>
+          <div class="hero-description">
+            <p>
+              At TalentSea Resources, we specialize in transforming fresh Computer Science graduates into industry-ready professionals. Through our holistic training program, we equip talented individuals with the practical skills and knowledge that companies need.
+            </p>
+          </div>
+          <p class="mission">
+            Our mission is simple: to create a seamless connection between ambitious talent and forward-thinking organizations. We invest in people, nurture their potential, and deliver skilled workforce solutions that drive business growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <h3>Fresh Talent</h3>
+            <p>Our recruitment process includes a distinctive test to identify talented graduates who aspire to launch their careers as Software Developers.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 7v14a2 2 0 0 0 2 2h16V7H2z"></path>
+              <path d="M22 7V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2"></path>
+              <line x1="12" y1="7" x2="12" y2="21"></line>
+            </svg>
+            <h3>Holistic Training</h3>
+            <p>Comprehensive, hands-on training that builds both technical and soft skills.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <h3>Industry Ready</h3>
+            <p>Graduates ready to contribute from day one, matched to your needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-tsr" class="process-section">
+      <div class="container">
+        <div class="process-header">
+            <h2>Why TalentSea?</h2>
+        </div>
+        
+        <div class="flow-wrapper">
+            <div class="step-box">
+                <div class="step-header">INPUT: Raw Talent Identification</div>
+                <div style="font-size: 0.95rem; margin-bottom: 2px;">Focusing on untapped <strong>Rural Talent</strong> pools.</div>
+                <div style="font-size: 0.95rem;">Applying a <strong>Distinctive Test</strong> to identify potential.</div>
+            </div>
+
+            <div class="flow-arrow">▼</div>
+
+            <div class="step-box">
+                <div class="step-header">PROCESS: Rigorous Filtering & Training</div>
+                <ul class="step-details">
+                    <li>Around 10 candidates <span class="constraint">ONLY</span> per batch.</li>
+                    <li>3 batches <span class="constraint">ONLY</span> per year.</li>
+                </ul>
+                <div style="margin-top: 8px; font-weight: 700; font-size: 0.9rem; border-top: 1px dashed #ccc; padding-top: 5px;">
+                    = Ensures 1-on-1 Personalized Attention
+                </div>
+            </div>
+
+            <div class="flow-arrow">▼</div>
+
+            <div class="outcome-label">OUTPUT: The TSR Resource Profile</div>
+            
+            <div class="outcome-container">
+                <div class="outcome-box">
+                    <div class="step-header">The Mindset</div>
+                    <ul class="step-details">
+                        <li>Loyalty Assured</li>
+                        <li>Decision-Making Competence</li>
+                        <li>Driven by <span class="constraint">Passion</span></li>
+                        <li>Strong Interaction</li>
+                    </ul>
+                </div>
+
+                <div class="outcome-box">
+                    <div class="step-header">The Skillset</div>
+                    <ul class="step-details">
+                        <li>High Coding Standards</li>
+                        <li>Multi-Language Exposure</li>
+                        <li>Multi-Database/Data Format Exposure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>Alumni Stories</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: #666;">Hear from the professionals who started their journey with us.</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            The learning experience felt like a journey fueled by curiosity — every concept took me further than I thought possible.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Niyati Patel</h4>
+                        <span>Software Engineer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            With over 12 years of experience... this training helped me strengthen my core fundamentals and broaden my perspective across multiple technologies.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Madhu K</h4>
+                        <span>App Development Manager, Newpark Drilling Fluids</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            I really liked how the training covered the fundamentals of multiple programming languages in a structured and easy-to-understand way.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Swathi K</h4>
+                        <span>React JS Developer, SmartApp</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            The training sessions included hands-on programming tasks that helped me gain a deep understanding of core concepts.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Kimiben Patel</h4>
+                        <span>Application Developer, SAP</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            I can now quickly switch between technologies as needed by various projects because I have a solid foundation in the fundamentals.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Lava Raju Ruthala</h4>
+                        <span>Senior Software Engineer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            The training was the foundation for me to become an adaptable engineer who can confidently learn new technologies for any project.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Gayatri Amirneni</h4>
+                        <span>Full Stack Developer, Nexoar Labs</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            The clear and practical teaching style helped me understand the concepts deeply and gave me the confidence to work with any technology.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Bandi Malleswara Rao</h4>
+                        <span>Senior Software Engineer, Trilogy Nextgen</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">
+                            The training helped me realize my potential and boosted my confidence to handle tasks independently.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Pranitha Reddy Aedla</h4>
+                        <span>Senior Software Engineer, Tecnics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Workforce?</h2>
+          <p>
+            Partner with us to access a pool of trained, motivated, and ready-to-contribute professionals who can make an immediate impact on your team.
+          </p>
+          <a href="mailto:info@talentsearesources.com" class="cta-button">
+            Get in Touch <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Location</h3>
+            <div class="location-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span style="font-weight: 600;">TalentSea Resources (OPC) Pvt. Ltd.</span>
+            </div>
+            <p>
+              H. No: 16-5-13, Nookambica Temple Street,<br>
+              Anakapalle, Visakhapatnam - 531 001,<br>
+              Andhra Pradesh, India
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <div class="email-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <p>
+              <a href="mailto:info@talentsearesources.com">info@talentsearesources.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2025 TalentSea Resources (OPC) Pvt. Ltd. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
 
